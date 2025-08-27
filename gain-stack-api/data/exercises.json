@@ -1,0 +1,11 @@
+[
+  {
+    "id": "test-exercise-123",
+    "name": "Dummy Test Exercise",
+    "description": "For workout tests",
+    "muscleGroups": [
+      "Test"
+    ],
+    "equipmentType": "other"
+  }
+]

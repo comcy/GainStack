@@ -68,7 +68,10 @@
               "buildTarget": "gain-stack-app:build:production"
             },
             "development": {
-              "buildTarget": "gain-stack-app:build:development"
+              "buildTarget": "gain-stack-app:build:development",
+              "options": {
+                "proxyConfig": "proxy.conf.json"
+              }
             }
           },
           "defaultConfiguration": "development"

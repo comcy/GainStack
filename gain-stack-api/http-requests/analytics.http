@@ -1,0 +1,4 @@
+### Get Exercise History
+# Note: Replace exerciseId with an actual ID from your exercises.json (e.g., e1 for Barbell Bench Press)
+GET http://localhost:3000/api/analytics/exercise/e1/history
+Accept: application/json

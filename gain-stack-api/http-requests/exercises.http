@@ -1,0 +1,33 @@
+### Get all Exercises
+GET http://localhost:3000/api/exercises
+Accept: application/json
+
+### Get Exercise by ID
+GET http://localhost:3000/api/exercises/e1
+Accept: application/json
+
+### Create Exercise
+POST http://localhost:3000/api/exercises
+Content-Type: application/json
+
+{
+  "name": "New Custom Exercise",
+  "description": "An exercise created via HTTP request.",
+  "muscleGroups": ["Custom"],
+  "equipmentType": "other"
+}
+
+### Update Exercise
+PUT http://localhost:3000/api/exercises/e1
+Content-Type: application/json
+
+{
+  "id": "e1",
+  "name": "Barbell Bench Press (Updated)",
+  "description": "Compound exercise for chest, shoulders, and triceps. (Updated)",
+  "muscleGroups": ["Chest", "Triceps", "Shoulders"],
+  "equipmentType": "free weights"
+}
+
+### Delete Exercise
+DELETE http://localhost:3000/api/exercises/{{$randomUUID}}

@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log*
+.env
+
+# Build artifacts
+dist/
+build/
+tmp/
+
+# IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Other
+coverage/

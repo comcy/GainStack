@@ -1,0 +1,60 @@
+### Get all Workouts
+GET http://localhost:3000/api/workouts
+Accept: application/json
+
+### Get Workout by ID
+GET http://localhost:3000/api/workouts/{{$randomUUID}}
+Accept: application/json
+
+### Create Workout
+# Note: Replace exerciseId with an actual ID from your exercises.json
+POST http://localhost:3000/api/workouts
+Content-Type: application/json
+
+{
+  "date": "2025-08-28",
+  "trainingPlanId": "tp1",
+  "exercisesPerformed": [
+    {
+      "exerciseId": "e1",
+      "sets": [
+        {"reps": 10, "weight": 60},
+        {"reps": 8, "weight": 65}
+      ],
+      "notes": "Feeling strong today!"
+    },
+    {
+      "exerciseId": "e14",
+      "sets": [
+        {"reps": 8, "weight": 80},
+        {"reps": 6, "weight": 85}
+      ]
+    }
+  ],
+  "notes": "Morning workout."
+}
+
+### Update Workout
+# Note: Replace workout ID and exerciseId with actual IDs
+PUT http://localhost:3000/api/workouts/{{$randomUUID}}
+Content-Type: application/json
+
+{
+  "id": "{{$randomUUID}}",
+  "date": "2025-08-28",
+  "trainingPlanId": "tp1",
+  "exercisesPerformed": [
+    {
+      "exerciseId": "e1",
+      "sets": [
+        {"reps": 10, "weight": 60},
+        {"reps": 8, "weight": 65},
+        {"reps": 5, "weight": 70, "notes": "Last set was tough"}
+      ]
+    }
+  ],
+  "notes": "Morning workout - updated."
+}
+
+### Delete Workout
+DELETE http://localhost:3000/api/workouts/{{$randomUUID}}

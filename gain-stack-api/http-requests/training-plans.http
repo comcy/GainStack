@@ -1,0 +1,29 @@
+### Get all Training Plans
+GET http://localhost:3000/api/training-plans
+Accept: application/json
+
+### Get Training Plan by ID
+GET http://localhost:3000/api/training-plans/tp1
+Accept: application/json
+
+### Create Training Plan
+POST http://localhost:3000/api/training-plans
+Content-Type: application/json
+
+{
+  "name": "New Custom Plan",
+  "description": "A custom training plan created via HTTP request."
+}
+
+### Update Training Plan
+PUT http://localhost:3000/api/training-plans/tp1
+Content-Type: application/json
+
+{
+  "id": "tp1",
+  "name": "Muskelaufbau & Definition (3er Split) - Updated",
+  "description": "Ein 3-Tages-Split-Trainingsplan für Muskelaufbau und Definition, ideal für 3 Trainingseinheiten pro Woche. (Updated)"
+}
+
+### Delete Training Plan
+DELETE http://localhost:3000/api/training-plans/{{$randomUUID}}
