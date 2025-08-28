@@ -1,11 +1,128 @@
 [
   {
-    "id": "test-exercise-123",
-    "name": "Dummy Test Exercise",
-    "description": "For workout tests",
-    "muscleGroups": [
-      "Test"
-    ],
-    "equipmentType": "other"
+    "id": "1",
+    "name": "Langhantel-Kniebeugen",
+    "description": "Eine Grundübung für die Entwicklung der Bein- und Gesäßmuskulatur.",
+    "muscleGroups": ["Quadrizeps", "Gesäßmuskeln", "Hamstrings"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "2",
+    "name": "Bankdrücken",
+    "description": "Eine Schlüsselübung für den Aufbau von Brust, Schultern und Trizeps.",
+    "muscleGroups": ["Brust", "Schultern", "Trizeps"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "3",
+    "name": "Kreuzheben",
+    "description": "Eine Ganzkörperübung, die besonders den Rücken, die Gesäßmuskeln und die Hamstrings stärkt.",
+    "muscleGroups": ["Rücken", "Gesäßmuskeln", "Hamstrings"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "4",
+    "name": "Schulterdrücken",
+    "description": "Effektive Übung für den Aufbau von Schultermuskulatur.",
+    "muscleGroups": ["Schultern", "Trizeps"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "5",
+    "name": "Langhantelrudern",
+    "description": "Stärkt den oberen Rücken, die Lats und den Bizeps.",
+    "muscleGroups": ["Rücken", "Lats", "Bizeps"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "6",
+    "name": "Kurzhantel-Ausfallschritte",
+    "description": "Fördert die Stabilität und Kraft in den Beinen und im Gesäß.",
+    "muscleGroups": ["Quadrizeps", "Gesäßmuskeln", "Hamstrings"],
+    "equipmentType": "free weights"
+  },
+  {
+    "id": "7",
+    "name": "Liegestütze",
+    "description": "Eine klassische Körpergewichtsübung für Brust, Schultern und Trizeps.",
+    "muscleGroups": ["Brust", "Schultern", "Trizeps"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "8",
+    "name": "Klimmzüge",
+    "description": "Eine anspruchsvolle Übung zur Stärkung des oberen Rückens und des Bizeps.",
+    "muscleGroups": ["Rücken", "Lats", "Bizeps"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "9",
+    "name": "Kniebeugen",
+    "description": "Grundlegende Körpergewichtsübung zur Stärkung der Beine und des Gesäßes.",
+    "muscleGroups": ["Quadrizeps", "Gesäßmuskeln", "Hamstrings"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "10",
+    "name": "Ausfallschritte",
+    "description": "Verbessert die Balance und stärkt die Beinmuskulatur.",
+    "muscleGroups": ["Quadrizeps", "Gesäßmuskeln"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "11",
+    "name": "Plank",
+    "description": "Eine isometrische Übung zur Stärkung der Rumpfmuskulatur.",
+    "muscleGroups": ["Bauchmuskeln", "Rücken"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "12",
+    "name": "Burpees",
+    "description": "Eine hochintensive Ganzkörperübung zur Verbesserung von Kraft und Ausdauer.",
+    "muscleGroups": ["Ganzkörper"],
+    "equipmentType": "bodyweight"
+  },
+  {
+    "id": "13",
+    "name": "Beinpresse",
+    "description": "Eine Maschinenübung zur gezielten Stärkung der Beinmuskulatur.",
+    "muscleGroups": ["Quadrizeps", "Gesäßmuskeln", "Hamstrings"],
+    "equipmentType": "machine"
+  },
+  {
+    "id": "14",
+    "name": "Latzug",
+    "description": "Simuliert einen Klimmzug an einem Gerät und stärkt den oberen Rücken.",
+    "muscleGroups": ["Rücken", "Lats"],
+    "equipmentType": "machine"
+  },
+  {
+    "id": "15",
+    "name": "Brustpresse",
+    "description": "Eine Alternative zum Bankdrücken an einem Gerät.",
+    "muscleGroups": ["Brust", "Schultern", "Trizeps"],
+    "equipmentType": "machine"
+  },
+  {
+    "id": "16",
+    "name": "Beinbeuger",
+    "description": "Isoliert und stärkt die Hamstrings.",
+    "muscleGroups": ["Hamstrings"],
+    "equipmentType": "machine"
+  },
+  {
+    "id": "17",
+    "name": "Beinstrecker",
+    "description": "Isoliert und stärkt den Quadrizeps.",
+    "muscleGroups": ["Quadrizeps"],
+    "equipmentType": "machine"
+  },
+  {
+    "id": "18",
+    "name": "Wadenheben an der Maschine",
+    "description": "Gezieltes Training für die Wadenmuskulatur.",
+    "muscleGroups": ["Waden"],
+    "equipmentType": "machine"
   }
 ]
