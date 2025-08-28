@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc && cp -r seed-data dist/",
+    "build": "tsc && cp -r data dist/",
     "test": "jest"
   },
   "keywords": [],

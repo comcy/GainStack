@@ -1,0 +1,51 @@
+mat-toolbar {
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  height: auto; /* Allow toolbar to grow in height if content wraps */
+  padding: 8px 16px; /* Adjust padding for smaller screens */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  margin-right: auto; /* Push other items to the right */
+
+  span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .logo-container {
+    width: 100%; /* Take full width on small screens */
+    justify-content: center; /* Center the logo and title */
+    margin-bottom: 10px; /* Add some space below */
+  }
+
+  .spacer {
+    display: none; /* Hide spacer on small screens */
+  }
+
+  .mat-button {
+    flex: 1 1 auto; /* Make buttons take full width */
+    margin: 5px 0; /* Add vertical margin */
+  }
+}

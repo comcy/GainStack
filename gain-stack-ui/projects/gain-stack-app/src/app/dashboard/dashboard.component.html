@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+
+  <!-- Start Workout -->
+  <mat-card class="dashboard-card start-workout-card" (click)="startWorkout()">
+    <mat-card-header>
+      <mat-card-title>Workout aufzeichnen</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-icon class="start-workout-icon">play_circle_filled</mat-icon>
+      <p>Starte ein neues Workout</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Active Training Plan -->
+  <mat-card class="dashboard-card" *ngIf="activePlan$ | async as activePlan; else noActivePlan">
+    <mat-card-header>
+      <mat-card-title>Aktiver Trainingsplan</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h2>{{ activePlan.name }}</h2>
+      <p>{{ activePlan.description }}</p>
+    </mat-card-content>
+  </mat-card>
+  <ng-template #noActivePlan>
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>Aktiver Trainingsplan</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Kein Trainingsplan aktiv. Wähle einen aus, um loszulegen!</p>
+        <button mat-flat-button color="primary" routerLink="/training-plans">Pläne anzeigen</button>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+
+</div>
+
+<div class="recent-workouts">
+  <h2>Letzte Workouts</h2>
+  <div class="workouts-container" *ngIf="recentWorkouts$ | async as workouts; else loadingWorkouts">
+    <p *ngIf="workouts.length === 0">Noch keine Workouts aufgezeichnet.</p>
+    <mat-card class="workout-card" *ngFor="let workout of workouts">
+      <mat-card-header>
+        <mat-card-title>Workout vom {{ workout.date | date: 'dd.MM.yyyy' }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ workout.notes }}</p>
+        <!-- More details can be added here -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <ng-template #loadingWorkouts>
+    <p>Lade Workouts...</p>
+  </ng-template>
+</div>
+

@@ -1,0 +1,47 @@
+.create-exercise-toggle {
+  margin-bottom: 20px;
+}
+
+.exercise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.exercises-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced gap */
+}
+
+.exercise-card {
+  transition: box-shadow 0.3s ease;
+  padding: 10px; /* Reduced overall card padding */
+
+  .mat-card-header {
+    padding: 0 0 10px 0; /* Reduced header padding */
+  }
+
+  .mat-card-content {
+    padding: 0 0 10px 0; /* Reduced content padding */
+  }
+
+  .mat-card-actions {
+    padding: 0; /* Remove actions padding */
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .exercise-card {
+    width: 100%; /* Ensure full width on small screens */
+  }
+}

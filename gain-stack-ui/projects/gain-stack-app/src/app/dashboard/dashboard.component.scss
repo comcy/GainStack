@@ -1,0 +1,52 @@
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-card {
+  flex: 1 1 300px;
+}
+
+.start-workout-card {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  .start-workout-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.recent-workouts {
+  margin-top: 20px;
+}
+
+.workouts-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.workout-card {
+  flex: 1 1 300px;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .dashboard-card,
+  .workout-card {
+    flex: 1 1 100%; /* Take full width on small screens */
+  }
+}

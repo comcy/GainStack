@@ -1,0 +1,47 @@
+.training-plan-detail-container {
+  padding: 20px;
+}
+
+.day-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.days-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.day-card {
+  .mat-card-header {
+    padding-bottom: 10px;
+  }
+
+  .mat-card-content {
+    padding-bottom: 10px;
+  }
+
+  .mat-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .day-card {
+    width: 100%; /* Ensure full width on small screens */
+  }
+}

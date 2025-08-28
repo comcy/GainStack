@@ -1,48 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Added for *ngFor, *ngIf
-import { TrainingPlan, TrainingPlanService } from './training-plan.service'; // Import service and interface
-import { FormsModule } from '@angular/forms'; // For ngModel
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Ensure it's standalone
-  imports: [RouterOutlet, CommonModule, FormsModule], // Added CommonModule and FormsModule
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  title = 'gain-stack-app';
-  trainingPlans: TrainingPlan[] = [];
-  newPlanName: string = '';
-  newPlanDescription: string = '';
+export class AppComponent {
+  title = 'GainStack';
 
-  constructor(private trainingPlanService: TrainingPlanService) { }
-
-  ngOnInit(): void {
-    this.loadTrainingPlans();
-  }
-
-  loadTrainingPlans(): void {
-    this.trainingPlanService.getTrainingPlans().subscribe(plans => {
-      this.trainingPlans = plans;
-    });
-  }
-
-  createTrainingPlan(): void {
-    const newPlan: TrainingPlan = { name: this.newPlanName, description: this.newPlanDescription };
-    this.trainingPlanService.createTrainingPlan(newPlan).subscribe(plan => {
-      this.trainingPlans.push(plan);
-      this.newPlanName = '';
-      this.newPlanDescription = '';
-    });
-  }
-
-  deleteTrainingPlan(id: string | undefined): void {
-    if (id) {
-      this.trainingPlanService.deleteTrainingPlan(id).subscribe(() => {
-        this.trainingPlans = this.trainingPlans.filter(p => p.id !== id);
-      });
-    }
-  }
+  constructor() {}
 }

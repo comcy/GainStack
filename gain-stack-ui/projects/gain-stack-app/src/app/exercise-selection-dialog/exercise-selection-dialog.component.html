@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Übungen auswählen</h2>
+
+<mat-dialog-content>
+  <mat-selection-list #exerciseList (selectionChange)="onSelectionChange($event)">
+    <mat-list-option *ngFor="let exercise of allExercises$ | async" [value]="exercise.id"
+      [selected]="selectedExerciseIds.includes(exercise.id || '')">
+      {{ exercise.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Abbrechen</button>
+  <button mat-raised-button color="primary" (click)="onSaveClick()">Speichern</button>
+</mat-dialog-actions>
+

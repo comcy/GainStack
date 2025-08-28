@@ -1,0 +1,79 @@
+<h2>Trainingspläne</h2>
+
+<div class="create-plan-toggle">
+  <button mat-raised-button color="primary" (click)="toggleCreateForm()">
+    <mat-icon>{{ showCreateForm ? 'close' : 'add' }}</mat-icon>
+    {{ showCreateForm ? 'Formular schließen' : 'Neuen Plan erstellen' }}
+  </button>
+</div>
+
+<div *ngIf="showCreateForm" class="create-plan-form">
+  <form [formGroup]="newPlanForm" (ngSubmit)="createPlan()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Beschreibung</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Startdatum</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enddatum</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="newPlanForm.invalid">Erstellen</button>
+  </form>
+</div>
+
+<div class="plans-container">
+  <div *ngIf="trainingPlans$ | async as trainingPlans; else loading">
+    <p *ngIf="trainingPlans.length === 0">Keine Trainingspläne gefunden.</p>
+
+    <mat-card *ngFor="let plan of trainingPlans" class="plan-card" [class.active-plan]="plan.isActive">
+      <mat-card-header>
+        <mat-card-title>{{ plan.name }}</mat-card-title>
+        <mat-card-subtitle *ngIf="plan.isActive" class="active-badge">Aktiv</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ plan.description }}</p>
+        <div *ngIf="plan.startDate || plan.endDate" class="date-range">
+          <mat-icon>date_range</mat-icon>
+          <span>
+            {{ plan.startDate | date: 'dd.MM.yyyy' }} - {{ plan.endDate | date: 'dd.MM.yyyy' }}
+          </span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="activatePlan(plan.id)" [disabled]="plan.isActive">
+          <mat-icon>check_circle</mat-icon>
+          Aktivieren
+        </button>
+        <button mat-button color="accent" [routerLink]="['/training-plans', plan.id]">
+          <mat-icon>info</mat-icon>
+          Details
+        </button>
+        <button mat-button color="warn" (click)="deletePlan(plan.id)">
+          <mat-icon>delete</mat-icon>
+          Löschen
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  <ng-template #loading>
+    <p>Lade Trainingspläne...</p>
+  </ng-template>
+</div>
+

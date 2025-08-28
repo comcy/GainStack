@@ -1,0 +1,72 @@
+<div class="training-plan-detail-container">
+  <button mat-button routerLink="/training-plans">
+    <mat-icon>arrow_back</mat-icon> Zurück zu Trainingsplänen
+  </button>
+
+  <mat-card *ngIf="trainingPlan$ | async as plan; else loading">
+    <mat-card-header>
+      <mat-card-title>{{ plan.name }}</mat-card-title>
+      <mat-card-subtitle>{{ plan.description }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="plan.startDate || plan.endDate">
+        Zeitraum: {{ plan.startDate | date: 'dd.MM.yyyy' }} - {{ plan.endDate | date: 'dd.MM.yyyy' }}
+      </p>
+      <p *ngIf="plan.isActive">Status: Aktiv</p>
+
+      <h3>Trainingstage</h3>
+      <button mat-raised-button color="primary" (click)="toggleDayForm()">
+        <mat-icon>{{ showDayForm ? 'close' : 'add' }}</mat-icon>
+        {{ showDayForm ? 'Formular schließen' : 'Tag hinzufügen' }}
+      </button>
+
+      <div *ngIf="showDayForm" class="day-form">
+        <form [formGroup]="dayForm" (ngSubmit)="saveDay()">
+          <mat-form-field appearance="fill">
+            <mat-label>Tag Name</mat-label>
+            <input matInput formControlName="name" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="dayForm.invalid">Speichern</button>
+          <button mat-button type="button" (click)="toggleDayForm()">Abbrechen</button>
+        </form>
+      </div>
+
+      <div *ngIf="plan.days && plan.days.length > 0" class="days-list">
+        <mat-card *ngFor="let day of plan.days; let i = index" class="day-card">
+          <mat-card-header>
+            <mat-card-title>{{ day.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h4>Übungen für diesen Tag</h4>
+            <button mat-button (click)="addExerciseToDay(i)">
+              <mat-icon>add</mat-icon> Übung hinzufügen
+            </button>
+            <mat-list *ngIf="day.exercises && day.exercises.length > 0">
+              <mat-list-item *ngFor="let exercise of day.exercises; let j = index">
+                {{ exercise.name }} (Sets: {{ exercise.sets }}, Reps: {{ exercise.reps }})
+                <button mat-icon-button (click)="removeExerciseFromDay(i, j)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-list-item>
+            </mat-list>
+            <p *ngIf="!day.exercises || day.exercises.length === 0">Keine Übungen für diesen Tag.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="toggleDayForm(day, i)">
+              <mat-icon>edit</mat-icon> Bearbeiten
+            </button>
+            <button mat-button color="warn" (click)="deleteDay(i)">
+              <mat-icon>delete</mat-icon> Löschen
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <p *ngIf="!plan.days || plan.days.length === 0">Keine Trainingstage definiert.</p>
+
+    </mat-card-content>
+  </mat-card>
+  <ng-template #loading>
+    <p>Lade Trainingsplan...</p>
+  </ng-template>
+</div>
+

@@ -10,4 +10,7 @@ export interface TrainingPlan {
       reps: string;
     }[];
   }[];
+  isActive?: boolean;
+  startDate?: string;
+  endDate?: string;
 }

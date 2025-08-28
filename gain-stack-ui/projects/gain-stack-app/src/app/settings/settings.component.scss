@@ -1,0 +1,16 @@
+mat-card {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  mat-card {
+    max-width: 100%; /* Take full width on small screens */
+    margin: 10px; /* Adjust margin */
+  }
+}

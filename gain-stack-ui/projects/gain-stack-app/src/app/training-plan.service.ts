@@ -6,7 +6,18 @@ export interface TrainingPlan {
   id?: string;
   name: string;
   description?: string;
-  // Add other properties as needed, e.g., exercises: Exercise[];
+  days?: {
+    name: string;
+    exercises: {
+      exerciseId: string;
+      sets: string;
+      reps: string;
+      name?: string;
+    }[];
+  }[];
+  isActive?: boolean;
+  startDate?: string;
+  endDate?: string;
 }
 
 @Injectable({
@@ -21,6 +32,10 @@ export class TrainingPlanService {
     return this.http.get<TrainingPlan[]>(this.apiUrl);
   }
 
+  getActiveTrainingPlan(): Observable<TrainingPlan> {
+    return this.http.get<TrainingPlan>(`${this.apiUrl}/active`);
+  }
+
   getTrainingPlan(id: string): Observable<TrainingPlan> {
     return this.http.get<TrainingPlan>(`${this.apiUrl}/${id}`);
   }
@@ -31,6 +46,10 @@ export class TrainingPlanService {
 
   updateTrainingPlan(plan: TrainingPlan): Observable<TrainingPlan> {
     return this.http.put<TrainingPlan>(`${this.apiUrl}/${plan.id}`, plan);
+  }
+
+  activateTrainingPlan(id: string): Observable<TrainingPlan> {
+    return this.http.patch<TrainingPlan>(`${this.apiUrl}/${id}/activate`, {});
   }
 
   deleteTrainingPlan(id: string): Observable<void> {

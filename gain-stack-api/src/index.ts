@@ -1,10 +1,10 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { initializeData } from './utils/dataHandler';
-import trainingPlanRoutes from './routes/trainingPlanRoutes';
-import exerciseRoutes from './routes/exerciseRoutes';
-import workoutRoutes from './routes/workoutRoutes';
-import analyticsRoutes from './routes/analyticsRoutes';
+import { initializeData } from './utils/data-handler';
+import trainingPlanRoutes from './routes/training-plan-routes';
+import exerciseRoutes from './routes/exercise-routes';
+import workoutRoutes from './routes/workout-routes';
+import analyticsRoutes from './routes/analytics-routes';
 
 const app = express();
 const port = 3000;

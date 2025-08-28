@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { promises as fs } from 'fs';
 import crypto from 'crypto';
-import { exercisesFilePath } from '../utils/dataHandler';
-import { Exercise } from '../interfaces/Exercise';
+import { exercisesFilePath } from '../utils/data-handler';
+import { Exercise } from '../interfaces/exercise';
 
 const router = Router();
 

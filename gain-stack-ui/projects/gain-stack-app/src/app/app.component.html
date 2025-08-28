@@ -1,25 +1,20 @@
-<div style="padding: 20px;">
-  <h1>Training Plans</h1>
+<mat-toolbar color="primary">
+  <a routerLink="/" class="logo-container">
+    <img src="logo.png" alt="GainStack Logo" class="logo">
+    <span>{{ title }}</span>
+  </a>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/exercises">Übungen</a>
+  <a mat-button routerLink="/training-plans">Trainingspläne</a>
+  <a mat-button routerLink="/workouts">Workouts</a>
+  <a mat-button routerLink="/analytics">Analytics</a>
 
-  <h2>Create New Training Plan</h2>
-  <div>
-    <input type="text" [(ngModel)]="newPlanName" placeholder="Plan Name" style="margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
-    <input type="text" [(ngModel)]="newPlanDescription" placeholder="Description (optional)" style="margin-right: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
-    <button (click)="createTrainingPlan()" style="padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Add Plan</button>
-  </div>
+  <button mat-icon-button routerLink="/settings">
+    <mat-icon>settings</mat-icon>
+  </button>
 
-  <h2 style="margin-top: 30px;">Existing Training Plans</h2>
-  <ul style="list-style: none; padding: 0;">
-    <li *ngFor="let plan of trainingPlans" style="background-color: #f9f9f9; border: 1px solid #eee; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <strong>{{ plan.name }}</strong>
-        <p *ngIf="plan.description">{{ plan.description }}</p>
-        <small *ngIf="plan.id">ID: {{ plan.id }}</small>
-      </div>
-      <button (click)="deleteTrainingPlan(plan.id)" style="padding: 8px 15px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
-    </li>
-    <li *ngIf="trainingPlans.length === 0" style="color: #666;">No training plans found. Create one above!</li>
-  </ul>
-</div>
+</mat-toolbar>
 
-<router-outlet />
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

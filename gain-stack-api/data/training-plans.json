@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "7d4b71d0-15cf-415f-8daa-56680ce36a82",
+    "name": "asdsd",
+    "description": "asdasd",
+    "startDate": "2025-08-27T22:00:00.000Z",
+    "endDate": "2025-08-30T22:00:00.000Z",
+    "isActive": true,
+    "days": [
+      {
+        "name": "Push",
+        "exercises": null
+      },
+      {
+        "name": "asdasd",
+        "exercises": null
+      },
+      {
+        "name": "Pull",
+        "exercises": null
+      }
+    ]
+  }
+]
