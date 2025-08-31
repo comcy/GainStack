@@ -3,6 +3,32 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "analytics-feature": [
+        "./dist/analytics-feature"
+      ],
+      "dashboard-feature": [
+        "./dist/dashboard-feature"
+      ],
+      "domain": [
+        "./dist/domain"
+      ],
+      "exercises-feature": [
+        "./dist/exercises-feature"
+      ],
+      "settings-feature": [
+        "./dist/settings-feature"
+      ],
+      "shared-ui": [
+        "./dist/shared-ui"
+      ],
+      "training-plans-feature": [
+        "./dist/training-plans-feature"
+      ],
+      "workouts-feature": [
+        "./dist/workouts-feature"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,

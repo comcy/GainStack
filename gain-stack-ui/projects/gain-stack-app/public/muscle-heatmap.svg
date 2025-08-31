@@ -1,0 +1,61 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect {
+      fill: #ccc; /* Default grey */
+      stroke: #000;
+      stroke-width: 1;
+    }
+    text {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: #333;
+    }
+  </style>
+  <!-- Beispiel: Quadrizeps -->
+  <rect id="Quadrizeps" x="50" y="50" width="100" height="40"/>
+  <text x="55" y="75">Quadrizeps</text>
+
+  <!-- Beispiel: Gesäßmuskeln -->
+  <rect id="Gesäßmuskeln" x="50" y="100" width="100" height="40"/>
+  <text x="55" y="125">Gesäßmuskeln</text>
+
+  <!-- Beispiel: Hamstrings -->
+  <rect id="Hamstrings" x="50" y="150" width="100" height="40"/>
+  <text x="55" y="175">Hamstrings</text>
+
+  <!-- Beispiel: Brust -->
+  <rect id="Brust" x="200" y="50" width="100" height="40"/>
+  <text x="205" y="75">Brust</text>
+
+  <!-- Beispiel: Schultern -->
+  <rect id="Schultern" x="200" y="100" width="100" height="40"/>
+  <text x="205" y="125">Schultern</text>
+
+  <!-- Beispiel: Trizeps -->
+  <rect id="Trizeps" x="200" y="150" width="100" height="40"/>
+  <text x="205" y="175">Trizeps</text>
+
+  <!-- Beispiel: Rücken -->
+  <rect id="Rücken" x="350" y="50" width="100" height="40"/>
+  <text x="355" y="75">Rücken</text>
+
+  <!-- Beispiel: Lats -->
+  <rect id="Lats" x="350" y="100" width="100" height="40"/>
+  <text x="355" y="125">Lats</text>
+
+  <!-- Beispiel: Bizeps -->
+  <rect id="Bizeps" x="350" y="150" width="100" height="40"/>
+  <text x="355" y="175">Bizeps</text>
+
+  <!-- Beispiel: Bauchmuskeln -->
+  <rect id="Bauchmuskeln" x="500" y="50" width="100" height="40"/>
+  <text x="505" y="75">Bauchmuskeln</text>
+
+  <!-- Beispiel: Ganzkörper -->
+  <rect id="Ganzkörper" x="500" y="100" width="100" height="40"/>
+  <text x="505" y="125">Ganzkörper</text>
+
+  <!-- Beispiel: Waden -->
+  <rect id="Waden" x="500" y="150" width="100" height="40"/>
+  <text x="505" y="175">Waden</text>
+</svg>
